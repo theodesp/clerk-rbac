@@ -15,8 +15,6 @@ const useOrganizationMembership = (
     // Simulated logic to check if the user is a member of the organization
     const checkMembership = () => {
       // Perform your logic to check if the user is a member of the organization
-      // For example, you could check the user's organization memberships against the current organization slug
-      // Replace this with your actual logic
       const userOrganizations = session?.user?.organizationMemberships.map(
         (membership) => membership.organization.name
       );
@@ -30,7 +28,7 @@ const useOrganizationMembership = (
 
     // Redirect to the homepage if the user is not a member of the organization
     if (!isMember) {
-      router.push(redirectTo); // Redirect to the homepage with temporary redirect status
+      router.push(redirectTo);
     }
   }, [organizationName, session, redirectTo, isMember, isSignedIn, router]); // Add any dependencies here
 
